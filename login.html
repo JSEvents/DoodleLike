@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  ng-app="lesolution" ng-controller="lesCtrl">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    </head>
+    <body>
+        <form class="form-signin" method="post" action="login.php" name="signin">
+            <div style='text-align: center'>
+            <h2 class="form-signin-heading">JS Events</h2>
+            </div>
+
+            <label for="inputEmail" class="sr-only">Identifiant</label>
+            <input type="email" id="email" class="form-control" placeholder="Identifiant" required="" name="email" autofocus="">
+            <label for="inputPassword" class="sr-only">Mot de Passe</label>
+            <input type="password" id="password" class="form-control" placeholder="Mot de Passe" name="password"  required="">
+            <!-- Afficher message d'erreur -->
+            <button class="btn btn-primary " type="submit">Connexion</button>    
+            <div class="fa-pull-right">
+                <a href="#">Récupérer mon mot de passe</a>
+            </div>
+        </form>
+    </body>
+</html>
