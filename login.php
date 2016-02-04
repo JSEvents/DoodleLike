@@ -1,5 +1,7 @@
 <?php
 
+require_once 'config.php';
+
 $email;
 $password;
 try {
@@ -17,9 +19,11 @@ try {
     echo $e->getMessage();
 }
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
+    $pdo = new PDO(DB_DSN,DB_USER,DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $response = $pdo->query('SELECT * FROM utilisateurs WHERE mail="'.$email.'" AND motdepasse="'.$password.'"');
+    $response = $response->fetch();
+    $_SESSION['utilisateur']['pk_index'] = $response['pk_index'];
     /*
     $stmt = $pdo->prepare('SELECT * FROM utilisateurs WHERE mail=:email AND motdepasse=:password');
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -30,5 +34,3 @@ try {
 } catch(Exception $e) {
     die('Erreur : '.$e->getMessage());
 }
-
-?>

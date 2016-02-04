@@ -1,10 +1,11 @@
 <?php
+
 $nom;
 $prenom;
 $email;
 $password;
 $tel;
-var_dump($_POST);
+
 try {
     if(isset($_POST['prenom']) && !empty($_POST['prenom'])){
         $prenom = $_POST['prenom'];
@@ -37,17 +38,6 @@ try {
 } catch(Exception $e){
     echo $e->getMessage();
 }
-/*
-public static function existingProfile(){
-        $p = post::getInstance();
-        
-        try{
-            renderBuilder::render(array('statut' => 'ok', 'phone' => participant::checkEmailDBB($p->participant['email']), 'tel' => participant::checkPhoneDBB($p->participant['tel'])));
-        } catch (Exception $e){
-            renderBuilder::render(array('statut' => 'error', 'error' => $e->getMessage()));
-        }
-    }
-*/
 
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
@@ -63,5 +53,3 @@ try {
 } catch(Exception $e) {
     die('Erreur : '.$e->getMessage());
 }
-
-?>

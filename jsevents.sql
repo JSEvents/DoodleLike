@@ -136,6 +136,11 @@ ALTER TABLE `participants`
   ADD CONSTRAINT `effacementEvenement` FOREIGN KEY (`id_evenement`) REFERENCES `evenements` (`pk_index`) ON DELETE CASCADE,
   ADD CONSTRAINT `effacementUtilisateur` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`pk_index`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
+--
+-- Ajout d'un champs dans la table évènement
+--
+ALTER TABLE `evenements` ADD `fk_utilisateur` INT NOT NULL , ADD INDEX (`fk_utilisateur`) ;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
