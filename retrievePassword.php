@@ -1,17 +1,11 @@
 <?php
 
 $email;
-$password;
 try {
     if(isset($_POST['email']) && !empty($_POST['email'])){
         $email = $_POST['email'];
     } else {
         throw new Exception('No email send');
-    }
-    if(isset($_POST['password']) && !empty($_POST['password'])){
-        $password = $_POST['password'];
-    } else {
-        throw new Exception('No password send');
     }
 } catch(Exception $e){
     echo $e->getMessage();
