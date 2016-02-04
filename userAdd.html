@@ -3,33 +3,53 @@
     <head>
         <meta charset="utf-8">
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="./CheckForm.js"></script>
     </head>
     <body>
     <h2>Création d'un nouveau compte</h2>
-        <form method="post" action="userAdd.php" name="signup">
-            <label for="nom">Nom</label>
-            <div id="nom">
-                <input type="text" name="nom" required>
+        <form method="post" action="register.php" name="signup">
+            <div>
+				<label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" required>
+				<span class="errorMsg" style="display:none; color:red;">Veuillez renseigner votre nom !</span>
             </div>
-            <label for="prenom">Prenom</label>
-            <div id="prenom">
-                <input type="text" name="prenom"  required>
+            <div>
+				<label for="prenom">Prenom</label>
+                <input type="text" name="prenom" id="prenom" required>
+				<span class="errorMsg" style="display:none; color:red;">Veuillez renseigner votre prénom !</span>
+            </div>
+            <div>
+				<label for="email">Adresse mail</label>
+                <input type="email" name="email" id="email" required>
+				<span class="errorMsg" style="display:none; color:red;">Adresse mail invalide !</span>
             </div>
 
-            <label for="email">Adresse mail</label>
-            <div id="email">
-                <input type="email" name="email">
+            <div>
+				<label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" required>
+				<span class="errorMsg" style="display:none; color:red;">Mot de passe trop court ! (Minimum 8 charactères)</span>
             </div>
-
-            <label for="password">Mot de passe</label>
-            <div id="password">
-                <input type="text" name="password" required>
+            <div>
+				<label for="password">Mot de passe (confirmation)</label>
+                <input type="password" name="passwordConfirmation" id="passwordConfirmation" required>
+				<span class="errorMsg" style="display:none; color:red;">Les deux mots de passe sont différents !</span>
             </div>
-            <label for="name">Téléphone</label>
-            <div id="name">
-                <input type="tel" name="tel" required>
+            <div>
+				<label for="name">Téléphone</label>
+                <input type="tel" name="tel" id="tel" required>
+				<span class="errorMsg" style="display:none; color:red;">Numéro invalide !</span>
             </div>
             <button class="btn btn-primary" type="submit">Enregistrer</button>
         </form>
     </body>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#nom").on("focusout", function() {CheckEmpty($("[name=nom]"));});
+		$("#prenom").on("focusout", function() {CheckEmpty($("[name=prenom]"));});
+		$("#email").on("focusout", function() {CheckEmail($("[name=email]"));});
+		$("#password").on("focusout", function() {CheckValidPassword($("[name=password]"),$("[name=passwordConfirmation]"));});
+		$("#passwordConfirmation").on("focusout", function() {CheckValidPassword($("[name=password]"),$("[name=passwordConfirmation]"));});
+		$("#tel").on("focusout", function() {CheckValidPhoneNumber($("[name=tel]"));});
+		});
+	</script>
 </html>
