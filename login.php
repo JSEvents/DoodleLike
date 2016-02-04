@@ -23,9 +23,10 @@ try {
     $response = $response->fetch();
     if(empty($response)){
         echo 'NON';
+    } else {
+        $_SESSION['utilisateur']['pk_index'] = $response['pk_index'];
+        echo 'OUI';
     }
-    $_SESSION['utilisateur']['pk_index'] = $response['pk_index'];
-    echo 'OUI';
     /*
     $stmt = $pdo->prepare('SELECT * FROM utilisateurs WHERE mail=:email AND motdepasse=:password');
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);

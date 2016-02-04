@@ -34,3 +34,29 @@ var transporter = nodemailer.createTransport({
 //});
 
 //server.listen(1337);
+
+
+var smtpConfig = {
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+        user: 'user@gmail.com',
+        pass: 'pass'
+    }
+};
+
+var poolConfig = {
+    pool: true,
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // use SSL
+    auth: {
+        user: 'user@gmail.com',
+        pass: 'pass'
+    }
+};
+
+var directConfig = {
+    name: 'hostname' // must be the same that can be reverse resolved by DNS for your IP
+};
