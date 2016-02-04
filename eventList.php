@@ -1,8 +1,6 @@
 <?php
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->query('SELECT * FROM evenements WHERE fk_utilisateur="'.$_SESSION['participant']['pk_index'].'"');
     $stmt = $pdo->fetchAll();
     

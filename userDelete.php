@@ -2,8 +2,6 @@
 
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->query('DELETE FROM `utilisateurs` WHERE pk_index = "'.$_SESSION['utilisateur']['pk_index'].'"');
     unset($_SESSION['utilisateur']);
     /*

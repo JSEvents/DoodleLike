@@ -19,8 +19,6 @@ try {
     echo $e->getMessage();
 }
 try {
-    $pdo = new PDO(DB_DSN,DB_USER,DB_PASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $response = $pdo->query('SELECT * FROM utilisateurs WHERE mail="'.$email.'" AND motdepasse="'.$password.'"');
     $response = $response->fetch();
     $_SESSION['utilisateur']['pk_index'] = $response['pk_index'];

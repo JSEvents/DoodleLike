@@ -51,8 +51,6 @@ try {
 }
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->query('UPDATE evenements SET `libelle` = "'.$libelle.'", `date` = "'.$date.'", `message` = "'.$message.'" WHERE pk_index="'.$pk_index.'"');
     
     echo json_encode(array('statut' => 'ok', 'message' => 'L\'évènement a bien été mis à jour !'));

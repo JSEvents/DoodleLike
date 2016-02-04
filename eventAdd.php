@@ -45,8 +45,6 @@ try {
 }
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->query('INSERT INTO `evenements`(`libelle`, `date`, `message`, `fk_utilisateur`) VALUES ("'.$libelle.'","'.$date.'","'.$message.'", "'.$_SESSION['utilisateurs']['pk_index'].'")');
     
     echo json_encode(array('statut' => 'ok','message' => 'L\'évènement a bien été crée !'));

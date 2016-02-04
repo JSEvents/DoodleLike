@@ -11,8 +11,6 @@ try {
     echo $e->getMessage();
 }
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $response = $pdo->query('SELECT * FROM utilisateurs WHERE mail="'.$email.'" AND motdepasse="'.$password.'"');
     /*
     $stmt = $pdo->prepare('SELECT * FROM utilisateurs WHERE mail=:email AND motdepasse=:password');

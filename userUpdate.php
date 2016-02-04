@@ -39,8 +39,6 @@ try {
 }
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->query('UPDATE `utilisateurs`SET `nom` = "'.$nom.'", `prenom` = "'.$prenom.'", `motdepasse` = "'.$password.'", `mail` = "'.$email.'", `tel = "'.$tel.'" WHERE pk_index = "'.$_SESSION['utilisateurs']['pk_index'].'"');
     /*
     $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE mail=:email AND motdepasse=:password');

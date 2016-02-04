@@ -40,8 +40,6 @@ try {
 }
 
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=jsevents','root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->query('INSERT INTO `utilisateurs`(`nom`, `prenom`, `motdepasse`, `mail`, `tel`) VALUES ("'.$nom.'","'.$prenom.'","'.$password.'","'.$email.'","'.$tel.'")');
     /*
     $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE mail=:email AND motdepasse=:password');
