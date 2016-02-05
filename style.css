@@ -1,0 +1,87 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+h1{
+	border:1px solid gray;
+	width: 300px;
+	margin: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;	
+	cursor: pointer;
+}
+h2{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: #aaaaaa;
+}
+
+#create{
+	width: 60%;
+	margin:	auto;
+}
+.form{
+	background-color: #aaa!important;
+	border-radius: 15px;
+	padding: 20px;
+}
+
+#formlogin{
+	margin-top:150px;
+	width:300px;
+}
+#formInscription{
+	margin: auto;
+	margin-top:150px;
+	width:230px;
+	
+}
+
+#formlogin input{
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: 250px;
+}
+button,input{
+	margin:10px;
+	margin-left:auto;
+	margin-right:auto;
+}	
+#recupPwd
+{
+	margin:15px;
+}
+
+#tableau,#creation,#inscription
+{
+	display: none;
+}
+
+#btDeconnexion{
+	
+	position: absolute;
+	top:10px;
+	right:20px;
+	display:none;
+	
+}
+#liste{
+	width: 60%;
+	background-color: blue;
+	border:2px solid black;
+	padding: 10px;
+	height:200px;
+	overflow: scroll;
+	margin: auto;
+}
+#evenement{
+	width: 80%;
+	background-color: blue;
+	border:2px solid black;
+	padding: 10px;
+	height:500px;
+	margin: auto;
+	
+
+}
